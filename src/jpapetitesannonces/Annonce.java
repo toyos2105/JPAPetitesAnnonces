@@ -6,60 +6,27 @@
 package jpapetitesannonces;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
  * @author Formation
  */
 @Entity
-public class Departement implements Serializable {
+public class Annonce implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private int numero;
-    private String nom;
-    
-    @OneToMany(mappedBy="departement")
-    List<Membre> membres = new ArrayList<>();
-    
+    private String titre;
+    private String corps;   
     
     
 
-    public Departement(int numero, String nom) {
-        this.numero = numero;
-        this.nom = nom;
-    }
-
-    public Departement() {
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    
     public Long getId() {
         return id;
     }
@@ -78,10 +45,10 @@ public class Departement implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Departement)) {
+        if (!(object instanceof Annonce)) {
             return false;
         }
-        Departement other = (Departement) object;
+        Annonce other = (Annonce) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -90,7 +57,7 @@ public class Departement implements Serializable {
 
     @Override
     public String toString() {
-        return "jpapetitesannonces.Departement[ id=" + id + " ]";
+        return "jpapetitesannonces.Annonce[ id=" + id + " ]";
     }
     
 }

@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -25,10 +27,15 @@ public class Membre implements Serializable {
     private String nom;
     private String prenom;
     private String adresse;
-    private Departement departement;
     private String login;
     private String pwd;
     private int solde;
+    
+    @ManyToOne
+    @JoinColumn(name="membre_id")
+    Departement departement;
+    
+    
 
     public Membre() {
     }
