@@ -18,37 +18,17 @@ import javax.persistence.ManyToOne;
  * @author Formation
  */
 @Entity
-public class Annonce implements Serializable {
+public class Paiement implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String titre;
-    private String corps;   
-
+    private float montant;
+    
     @ManyToOne
-    @JoinColumn(name="membre_annonce")
-    private Membre membre;
-    
-    
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
-    public String getCorps() {
-        return corps;
-    }
-
-    public void setCorps(String corps) {
-        this.corps = corps;
-    }
-    
-    
+    @JoinColumn(name="annonce_id")
+    Membre membre;
 
     public Long getId() {
         return id;
@@ -68,10 +48,10 @@ public class Annonce implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Annonce)) {
+        if (!(object instanceof Paiement)) {
             return false;
         }
-        Annonce other = (Annonce) object;
+        Paiement other = (Paiement) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -80,7 +60,7 @@ public class Annonce implements Serializable {
 
     @Override
     public String toString() {
-        return "jpapetitesannonces.Annonce[ id=" + id + " ]";
+        return "jpapetitesannonces.Paiement[ id=" + id + " ]";
     }
     
 }

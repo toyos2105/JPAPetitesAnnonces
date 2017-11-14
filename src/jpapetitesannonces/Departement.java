@@ -31,9 +31,7 @@ public class Departement implements Serializable {
     
     @OneToMany(mappedBy="departement")
     List<Membre> membres = new ArrayList<>();
-    
-    
-    
+
 
     public Departement(int numero, String nom) {
         this.numero = numero;
