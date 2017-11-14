@@ -22,6 +22,28 @@ public class Membre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String nom;
+    private String prenom;
+    private String adresse;
+    private Departement departement;
+    private String login;
+    private String pwd;
+    private int solde;
+
+    public Membre() {
+    }
+    
+    public Membre(String nom, String prenom, String adresse, Departement departement, String login, String pwd, int solde) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.departement = departement;
+        this.login = login;
+        this.pwd = pwd;
+        this.solde = solde;
+    }
+        
+    
 
     public Long getId() {
         return id;
@@ -29,6 +51,62 @@ public class Membre implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public Departement getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public int getSolde() {
+        return solde;
+    }
+
+    public void setSolde(int solde) {
+        this.solde = solde;
     }
 
     @Override
