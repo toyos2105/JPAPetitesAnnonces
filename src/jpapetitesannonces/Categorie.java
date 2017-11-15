@@ -6,34 +6,29 @@
 package jpapetitesannonces;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Formation
  */
 @Entity
-public class Paiement implements Serializable {
+public class Categorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private float montant;
-    
-    @ManyToOne
-    @JoinColumn(name="membre_emetteur_id")
-    Membre membre_emetteur;
-    
-    @ManyToOne
-    @JoinColumn(name="membre_destinataire_id")
-    Membre membre_destinataire;
+    private Long id;    private String titre;
+    private String corps;
 
+    @OneToMany(mappedBy="categorie")
+    List<Annonce> annonces = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -53,10 +48,10 @@ public class Paiement implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Paiement)) {
+        if (!(object instanceof Categorie)) {
             return false;
         }
-        Paiement other = (Paiement) object;
+        Categorie other = (Categorie) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -65,7 +60,7 @@ public class Paiement implements Serializable {
 
     @Override
     public String toString() {
-        return "jpapetitesannonces.Paiement[ id=" + id + " ]";
+        return "jpapetitesannonces.Categorie[ id=" + id + " ]";
     }
     
 }

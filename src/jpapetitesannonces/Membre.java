@@ -35,12 +35,18 @@ public class Membre implements Serializable {
     private int solde;
     
     @ManyToOne
-    @JoinColumn(name="membre_dept")
+    @JoinColumn(name="departement_id")
     private Departement departement;
     
     @OneToMany(mappedBy="membre")
     List<Annonce> annonces = new ArrayList<>();
 
+    @OneToMany(mappedBy="membre_emetteur")
+    List<Paiement> message_emis = new ArrayList<>();
+    
+    @OneToMany(mappedBy="membre_destinataire")
+    List<Paiement> message_recus = new ArrayList<>();
+    
     public Membre() {
     }
     

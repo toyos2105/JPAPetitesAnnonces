@@ -24,6 +24,7 @@ public class JPAMesAnnoncesTest {
         myEm.getTransaction().begin();
         
         
+        
         myEm.getTransaction().commit();
     }
     

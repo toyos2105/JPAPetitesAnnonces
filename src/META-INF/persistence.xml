@@ -5,6 +5,9 @@
     <class>jpapetitesannonces.Membre</class>
     <class>jpapetitesannonces.Departement</class>
     <class>jpapetitesannonces.Annonce</class>
+    <class>jpapetitesannonces.Categorie</class>
+    <class>jpapetitesannonces.Paiement</class>
+    <class>jpapetitesannonces.Message</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/mesannoces"/>
       <property name="javax.persistence.jdbc.user" value="app"/>

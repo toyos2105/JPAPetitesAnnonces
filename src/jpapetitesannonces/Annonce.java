@@ -28,8 +28,12 @@ public class Annonce implements Serializable {
     private String corps;   
 
     @ManyToOne
-    @JoinColumn(name="membre_annonce")
+    @JoinColumn(name="membre_id")
     private Membre membre;
+    
+    @ManyToOne
+    @JoinColumn(name="categorie_id")
+    private Categorie categorie;
     
     
     public String getTitre() {
