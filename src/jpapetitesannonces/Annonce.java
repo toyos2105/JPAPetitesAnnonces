@@ -30,7 +30,6 @@ public class Annonce implements Serializable {
     @ManyToOne
     @JoinColumn(name="membre_id")
     private Membre membre;
-    
     @ManyToOne
     @JoinColumn(name="categorie_id")
     private Categorie categorie;
