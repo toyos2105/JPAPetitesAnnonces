@@ -27,11 +27,11 @@ public class Message implements Serializable {
     
     @ManyToOne
     @JoinColumn(name="membre_emetteur_id")
-    Membre membre_emetteur;
+    private Membre membre_emetteur;
     
     @ManyToOne
     @JoinColumn(name="membre_destinataire_id")
-    Membre membre_destinataire;
+    private Membre membre_destinataire;
 
     public Long getId() {
         return id;

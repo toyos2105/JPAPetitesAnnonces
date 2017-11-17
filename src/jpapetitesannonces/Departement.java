@@ -30,7 +30,7 @@ public class Departement implements Serializable {
     private String nom;
     
     @OneToMany(mappedBy="departement")
-    List<Membre> membres = new ArrayList<>();
+    private List<Membre> membres = new ArrayList<>();
 
 
     public Departement(int numero, String nom) {

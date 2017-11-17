@@ -28,7 +28,7 @@ public class Categorie implements Serializable {
     private String corps;
 
     @OneToMany(mappedBy="categorie")
-    List<Annonce> annonces = new ArrayList<>();
+    private List<Annonce> annonces = new ArrayList<>();
 
     public Long getId() {
         return id;
